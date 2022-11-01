@@ -46,8 +46,8 @@ class User_dogFavorite(db.Model):
     name = db.Column(db.String(120), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     dog_id = db.Column(db.Integer, db.ForeignKey("dogs.id"))
-    user = db.relationship(User)
-    dogs = db.relationship(Dogs)
+    """ user = db.relationship(User)
+    dogs = db.relationship(Dogs) """
     
     #is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
@@ -73,7 +73,7 @@ class Razas_dogs(db.Model):
     aseo = db.Column(db.String(250),unique=True, nullable=False)
     raza_nino = db.Column(db.String(250),unique=True, nullable=False)
     dog_id = db.Column(db.Integer, db.ForeignKey("dogs.id"))
-    dog = db.relationship(Dogs)
+    """ dog = db.relationship(Dogs) """
     
     #is_active = db.Column(db.Boolean(), unique=False, nullable=False)
 
@@ -137,8 +137,8 @@ class Results(db.Model):
     result_11 = db.Column(db.String(50),unique=True, nullable=False)
     answer_id = db.Column(db.Integer, db.ForeignKey("answer.id"))
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
-    answer = db.relationship(Answer)
-    user = db.relationship(User)
+    """ answer = db.relationship(Answer)
+    user = db.relationship(User) """
 
     def __repr__(self):
         return f'<Results {self.id}>'
@@ -179,8 +179,8 @@ class Sabias_que(db.Model):
     perro_familiar = db.Column(db.String(50),unique=True, nullable=False)
     results_id = db.Column(db.Integer, db.ForeignKey("results.id"))
     dog_id = db.Column(db.Integer, db.ForeignKey("dogs.id"))
-    results = db.relationship(Results)
-    dogs = db.relationship(Dogs)
+    """ results = db.relationship(Results)
+    dogs = db.relationship(Dogs) """
     
     def __repr__(self):
         return f'<Sabias_que {self.id}>'
@@ -221,9 +221,9 @@ class Resp_SabiasQue(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     dog_id = db.Column(db.Integer, db.ForeignKey("dogs.id"))
     sabiasque_id = db.Column(db.Integer, db.ForeignKey("sabiasque.id"))
-    user = db.relationship(User)
+    """ user = db.relationship(User)
     dogs = db.relationship(Dogs)
-    sabiasque= db.relationship(Sabias_que)
+    sabiasque= db.relationship(Sabias_que) """
 
     
     def __repr__(self):
